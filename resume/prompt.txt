@@ -1,0 +1,382 @@
+I am preparing for an SDE-1 / Backend Software Engineer interview.
+
+I will provide my resume below. Your job is to analyze my resume and create a **resume-driven interview preparation plan**.
+
+The most important rule is:
+
+**Assume that the interviewer can ask questions about ANY technical word, technology, metric, architecture decision, implementation detail, or claim written on my resume.**
+
+Do NOT give me generic interview questions only. Focus heavily on the technologies, projects, responsibilities, and claims actually present in my resume.
+
+### Step 1 — Extract my resume topics
+
+First, identify every interviewable topic from my resume.
+
+For each resume bullet/project, extract:
+
+* Programming languages
+* Frameworks
+* Databases
+* Caching
+* Messaging systems
+* Cloud/AWS services
+* Microservices
+* APIs
+* Distributed systems concepts
+* Concurrency/multithreading
+* Security
+* Observability/monitoring
+* Testing
+* AI/LLM concepts
+* Design patterns
+* SOLID/LLD concepts
+* Performance/scalability claims
+* Reliability/fault-tolerance mechanisms
+* Any numbers/metrics mentioned
+* Any technology or terminology that an interviewer could ask me to explain
+
+Create a table:
+
+| Resume Point | Technical Topics | Likely Interview Depth | Priority |
+| ------------ | ---------------- | ---------------------- | -------- |
+
+Priority should be:
+
+* 🔴 Critical — very likely interviewer follow-up
+* 🟠 Important — reasonable follow-up
+* 🟢 Secondary — possible follow-up
+
+### Step 2 — Predict interviewer follow-up questions
+
+For EVERY important resume point, generate questions in increasing difficulty.
+
+Use this structure:
+
+#### Level 1 — Basic understanding
+
+Questions such as:
+
+* What is X?
+* Why did you use X?
+* How does X work?
+* What problem does X solve?
+* What are its advantages/disadvantages?
+
+#### Level 2 — Implementation
+
+Questions such as:
+
+* How did you implement it?
+* How was it integrated into your application?
+* What components were involved?
+* What happened internally?
+* How did data flow through the system?
+
+#### Level 3 — Why this approach?
+
+Ask:
+
+* Why did you choose X instead of Y?
+* What alternatives did you consider?
+* What trade-offs did you make?
+* What would happen if X failed?
+* What limitations does your approach have?
+
+#### Level 4 — Deep technical follow-ups
+
+Ask questions that an experienced interviewer could use to determine whether I actually worked on the project.
+
+Examples:
+
+* What happens internally?
+* Where can race conditions occur?
+* What happens under high load?
+* What happens if a dependency becomes unavailable?
+* How do retries interact with timeouts?
+* How do you prevent duplicate processing?
+* What happens during partial failure?
+* How do you handle concurrency?
+* What happens when multiple instances process the same request?
+* How would you debug this issue in production?
+
+#### Level 5 — Scenario/design questions
+
+Create realistic scenarios based on my resume.
+
+For example:
+
+"If your service receives 5,000 requests/sec and the downstream vendor starts returning errors, what happens?"
+
+"Two requests try to modify the same resource simultaneously. How do you prevent inconsistent data?"
+
+"Your Kafka consumer crashes after processing a message but before acknowledging it. What happens?"
+
+"Redis becomes unavailable. How does your application behave?"
+
+Make the scenarios specific to the technologies and claims in MY resume.
+
+### Step 3 — Challenge every metric on my resume
+
+Whenever my resume contains a number such as:
+
+* 5,000 RPS
+* 20+ microservices
+* 12+ services
+* 57% context reduction
+* 10% cost reduction
+* 5–15% latency improvement
+* etc.
+
+assume the interviewer will challenge it.
+
+For each metric ask:
+
+1. How did you measure it?
+2. What was the baseline?
+3. How did you calculate the improvement?
+4. What tools did you use?
+5. Was it production data or testing?
+6. What workload was used?
+7. How reliable is the measurement?
+8. What exactly did YOU do?
+9. What were the trade-offs?
+10. Can you reproduce the result?
+
+Also teach me how to defend the metric honestly without exaggerating my contribution.
+
+### Step 4 — Project deep dive
+
+For every major project in my resume, create an interview-style deep dive.
+
+Cover:
+
+1. Problem statement
+2. Existing system
+3. My responsibility
+4. Architecture
+5. Request/data flow
+6. Major components
+7. Database interaction
+8. Caching
+9. Messaging
+10. External dependencies
+11. Failure handling
+12. Concurrency
+13. Scalability
+14. Security
+15. Monitoring/observability
+16. Testing
+17. Deployment
+18. Trade-offs
+19. Problems encountered
+20. Production incidents
+21. Improvements I made
+22. What I would change today
+
+Then generate questions around each section.
+
+### Step 5 — "Did you actually build this?" questions
+
+Act like a skeptical interviewer.
+
+For every major technology in my resume, ask questions that distinguish someone who:
+
+A. merely knows the technology,
+
+B. used the technology,
+
+C. actually implemented/debugged/maintained it in production.
+
+For example:
+
+Instead of only asking:
+
+"What is a circuit breaker?"
+
+also ask:
+
+"Where exactly was the circuit breaker placed in your request flow?"
+
+"What configuration did you use and why?"
+
+"What happens when the circuit opens?"
+
+"How does HALF_OPEN work?"
+
+"What happens if retries are also enabled?"
+
+"Could retries make the problem worse?"
+
+"How did you monitor it?"
+
+### Step 6 — Cross-question me
+
+Interviewers often ask follow-up questions based on my previous answer.
+
+Therefore, create question chains.
+
+Example:
+
+Q1: Why did you use Redis?
+
+If I answer Redis improves latency:
+
+Q2: What was the cache key?
+
+Q3: What was the TTL?
+
+Q4: How did you handle stale data?
+
+Q5: What happens when Redis goes down?
+
+Q6: What happens if two instances update the same key?
+
+Q7: Did you use distributed locking?
+
+Q8: Why Redis instead of database caching?
+
+Create similar chains for my actual resume topics.
+
+### Step 7 — Identify resume weaknesses
+
+Analyze my resume and tell me:
+
+* Which claims are likely to attract difficult questions?
+* Which technologies require deeper preparation?
+* Which bullets are too vague?
+* Which metrics need a solid explanation?
+* Which technologies might lead to system-design questions?
+* Which areas could expose that I only have surface-level knowledge?
+
+Do NOT tell me to change the resume unless necessary. The primary goal is interview preparation.
+
+### Step 8 — Teach before testing
+
+If I don't know the answer to a question, teach me the concept first.
+
+Use this format:
+
+**Concept**
+
+Explain it simply.
+
+**Why it matters**
+
+Explain why an interviewer asks about it.
+
+**How it works**
+
+Explain the internal flow.
+
+**Example**
+
+Give a practical backend example.
+
+**Interview answer**
+
+Give me a concise SDE-1 level answer that I could say in an interview.
+
+**Follow-up questions**
+
+Give 3–5 likely follow-ups.
+
+**Common mistakes**
+
+Tell me what candidates commonly say incorrectly.
+
+### Step 9 — Interview simulation
+
+After teaching me the important topics, conduct a mock interview.
+
+Rules:
+
+* Ask ONE question at a time.
+* Wait for my answer.
+* Do not immediately give me the answer.
+* Evaluate my response.
+* Tell me what was correct.
+* Tell me what was missing.
+* Correct inaccurate statements.
+* Give me a better interview-ready answer.
+* Then ask the next follow-up question.
+* Frequently cross-question my answers.
+* Occasionally challenge assumptions like a real interviewer.
+
+Mix:
+
+* Resume questions
+* Java
+* Spring Boot
+* SQL
+* REST APIs
+* Microservices
+* Kafka
+* Redis
+* AWS
+* Concurrency/multithreading
+* LLD/SOLID
+* System design fundamentals
+* AI/LLM topics if present in my resume
+
+But give **higher weight to technologies explicitly mentioned in my resume**.
+
+### Step 10 — Final preparation checklist
+
+At the end, create:
+
+#### Must Know
+
+Questions I absolutely need to answer confidently.
+
+#### Should Know
+
+Questions I should be comfortable with.
+
+#### Nice to Know
+
+Questions that are possible but lower priority.
+
+Also create a final:
+
+**"Top 50 questions an interviewer is most likely to ask me based specifically on my resume."**
+
+For each question, include:
+
+* Difficulty
+* Topic
+* Why interviewer may ask it
+* What a strong answer should contain
+
+### Important rules
+
+1. Do not assume I know something just because it appears on my resume.
+2. Do not invent details about my projects.
+3. If my resume does not provide enough information to answer a project-specific question, explicitly mark it as **"Need user-specific detail"**.
+4. Distinguish between what I personally implemented and what the overall system does.
+5. Focus on practical engineering knowledge rather than textbook definitions.
+6. Prioritize questions appropriate for an **SDE-1 / ~2 YOE backend engineer**.
+7. Go deep enough that I can survive follow-up questions.
+8. Don't overwhelm me by teaching everything at once.
+9. Teach topics in priority order.
+10. When possible, connect concepts to my actual resume projects.
+11. If a resume bullet contains multiple technologies, show how those technologies interact.
+12. Pay special attention to concurrency, failure handling, scalability, database consistency, Kafka semantics, caching, APIs, and distributed-system behavior when relevant.
+13. Never fabricate my experience, configurations, metrics, architecture, or responsibilities.
+
+### My Resume points:
+Integrated Headroom AI and implemented a prompt-optimization layer, reducing sports-statistics context by 57% (2.5M → 1.1M
+characters) while preserving response quality; reduced LLM costs by 10% and estimated inference latency by 5–15% on
+statistics-heavy queries.
+● Built an AWS Lambda service ingesting daily sports statistics over ~840 upstream API calls per run, throttled by a bounded
+semaphore with per-match error isolation, publishing ~67 MB of aggregated JSON per season to S3.
+● Contributed to the development of a distributed escrow architecture supporting both standard gameplay and rumble competitions,
+handling $10M+ in daily transactions while maintaining transactional integrity.
+● Built a 6-metric LLM-as-a-Judge suite on 66 Sports queries (396 scores/run) spanning betting, stats, and adversarial safety
+cases, gating promotion on 100% safety/compliance and ≥0.6 completeness.
+● Built a JAVA/Spring Boot UGC moderation API with Unicode normalization, a local PII pre-filter, and Resilience4j rate limiting,
+circuit breaking, retry, and bulkhead; capped outbound vendor calls at 1,000/s per ECS task and returned fail-closed BLOCK when
+external moderation API call timed out or failed.
+● Integrated AWS CloudWatch → SNS → PagerDuty for production on-call alerting, with thresholds for API p99 latency, report
+failures, and hourly moderation-sanction spikes; added Slack integration for real-time alerts.
+
+

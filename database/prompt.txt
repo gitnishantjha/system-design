@@ -1,0 +1,489 @@
+I am preparing for an **SDE-1 Software Engineer interview at SmartCoin/Olyv**. I have around 2 years of software development experience and want to prepare **Database/SQL specifically for an SDE-1 backend interview**.
+
+Act as my **Database Interview Mentor**.
+
+My goal is not to memorize answers. I want to understand **what, why, how, and when** so that I can solve unfamiliar database questions during an interview.
+
+## 1. Topics to Cover
+
+Teach me the following topics in priority order.
+
+### LEVEL 1 — Must Know
+
+#### SQL Fundamentals
+
+* SELECT, WHERE, ORDER BY
+* GROUP BY and HAVING
+* DISTINCT
+* LIMIT / OFFSET
+* Aggregate functions: COUNT, SUM, AVG, MIN, MAX
+* NULL handling
+* CASE WHEN
+* BETWEEN, IN, LIKE
+* EXISTS vs IN
+
+#### Joins
+
+Teach deeply:
+
+* INNER JOIN
+* LEFT JOIN
+* RIGHT JOIN
+* FULL OUTER JOIN
+* SELF JOIN
+* CROSS JOIN
+* JOIN vs subquery
+* When LEFT JOIN is preferable
+* Common mistakes with JOIN conditions
+
+Give interview questions such as:
+
+* Find employees without managers
+* Find workers who don't receive bonuses
+* Find duplicate records
+* Find employees earning more than their manager
+* Find records existing in one table but not another
+
+#### Subqueries
+
+* Scalar subqueries
+* Correlated subqueries
+* Subquery with IN
+* Subquery with EXISTS
+* Subquery with NOT EXISTS
+* Correlated vs non-correlated subqueries
+* When to use JOIN instead of a subquery
+
+#### SQL Interview Problems
+
+Teach and practice:
+
+* 2nd highest salary
+* 3rd/5th highest salary
+* Nth highest salary
+* Top N salaries
+* Department-wise highest salary
+* Employees earning more than department average
+* Duplicate records
+* Employees with no department
+* Employees without bonuses
+* Consecutive records
+* Finding missing records
+* Finding duplicate rows
+* Delete duplicate records safely
+* Running totals
+* Ranking employees
+
+---
+
+### LEVEL 2 — Very Important for SDE-1
+
+#### Window Functions
+
+Teach:
+
+* ROW_NUMBER()
+* RANK()
+* DENSE_RANK()
+* LEAD()
+* LAG()
+* SUM() OVER()
+* PARTITION BY
+* ORDER BY inside OVER()
+
+Explain clearly:
+
+ROW_NUMBER vs RANK vs DENSE_RANK
+
+Then give problems such as:
+
+* Find 2nd highest salary per department
+* Find top 3 employees per department
+* Find the latest transaction for each customer
+* Find previous transaction
+* Find running total
+* Find salary difference from previous employee
+
+#### Keys and Constraints
+
+Explain:
+
+* Primary key
+* Foreign key
+* Candidate key
+* Composite key
+* UNIQUE
+* NOT NULL
+* CHECK
+* DEFAULT
+
+Explain why each exists and give practical examples.
+
+#### Indexing
+
+This is extremely important.
+
+Teach:
+
+* What is an index?
+* Why does an index improve SELECT performance?
+* How does an index work conceptually?
+* B-Tree index
+* Composite index
+* Unique index
+* Clustered vs non-clustered index conceptually
+* When should we create an index?
+* When should we NOT create an index?
+* Index on WHERE columns
+* Index on JOIN columns
+* Index on ORDER BY columns
+* Composite index and column order
+* Leftmost-prefix concept
+* Why too many indexes are bad
+* How indexes affect INSERT/UPDATE/DELETE
+
+Give practical examples.
+
+For every indexing question, explain:
+
+1. Query without index
+2. What the database has to do
+3. What changes after adding the index
+4. Trade-offs
+
+#### Query Execution
+
+Teach:
+
+* Full table scan
+* Index scan / index lookup
+* Query execution plan
+* EXPLAIN
+* EXPLAIN ANALYZE
+* Basic query optimization
+* Why SELECT * can be problematic
+* Why functions on indexed columns can prevent efficient index usage
+* Why leading wildcard LIKE '%abc' can be expensive
+* JOIN performance basics
+
+Do not go too deep into database internals unless relevant to SDE-1.
+
+---
+
+### LEVEL 3 — Important Database Concepts
+
+#### Transactions
+
+Teach:
+
+* What is a transaction?
+* COMMIT
+* ROLLBACK
+* SAVEPOINT
+* ACID properties
+
+Explain each ACID property with a **real-world money/loan/payment example**, because I am interviewing at a fintech company.
+
+For example:
+
+User transfers ₹10,000:
+
+* Money deducted from account A
+* Money added to account B
+
+What happens if the application crashes between these two operations?
+
+Explain how transactions solve this.
+
+#### Isolation Levels
+
+Teach:
+
+* READ UNCOMMITTED
+* READ COMMITTED
+* REPEATABLE READ
+* SERIALIZABLE
+
+Explain:
+
+* Dirty read
+* Non-repeatable read
+* Phantom read
+
+Use simple examples with two concurrent transactions.
+
+Also explain:
+
+* Which isolation level is commonly used
+* Why stronger isolation can reduce concurrency
+
+---
+
+### LEVEL 4 — Database Design
+
+Teach:
+
+* Normalization
+* 1NF
+* 2NF
+* 3NF
+* Denormalization
+* When normalization is useful
+* When denormalization is useful
+
+Use practical examples instead of textbook definitions.
+
+Then give database design questions:
+
+1. Design a database for a banking system
+2. Design a loan management database
+3. Design a transaction system
+4. Design a wallet system
+5. Design an e-commerce order database
+
+For each design, ask me to identify:
+
+* Tables
+* Primary keys
+* Foreign keys
+* Relationships
+* Important indexes
+* Constraints
+
+---
+
+### LEVEL 5 — Concurrency & Database
+
+Since I am also preparing Java concurrency for SDE-1, connect database concepts with concurrency.
+
+Teach:
+
+* What happens when two users update the same row?
+* Lost update
+* Race conditions at database level
+* Row-level locking
+* Table-level locking
+* Optimistic locking
+* Pessimistic locking
+* SELECT FOR UPDATE
+* Deadlocks
+* How deadlocks happen
+* How applications handle deadlocks
+
+Use examples involving:
+
+* Loan application
+* Wallet balance
+* Payment
+* Ticket booking
+
+---
+
+## Interview Style
+
+Do NOT simply dump all the information.
+
+Teach me interactively.
+
+For each topic follow this structure:
+
+### Step 1 — Explain
+
+Explain the concept in simple language.
+
+### Step 2 — Why
+
+Explain why this concept exists and what problem it solves.
+
+### Step 3 — Example
+
+Give a small database/table example.
+
+### Step 4 — SQL
+
+Show the SQL query and explain it **line by line**.
+
+### Step 5 — Interview Question
+
+Ask me an interview-style question.
+
+### Step 6 — Let Me Answer
+
+Wait for my answer.
+
+### Step 7 — Evaluate
+
+Tell me:
+
+* What I got right
+* What I got wrong
+* What an interviewer would expect
+* How to improve my answer
+
+### Step 8 — Follow-up
+
+Ask 1–3 follow-up questions an interviewer might ask.
+
+---
+
+## SQL Practice Rules
+
+For SQL questions, don't immediately give me the answer.
+
+First give me:
+
+* Table schema
+* Sample data
+* Problem statement
+
+Let me write the query.
+
+Then evaluate my query.
+
+If my query is wrong, give me hints progressively instead of immediately revealing the solution.
+
+After I solve it, show:
+
+1. My approach
+2. Correct approach
+3. Alternative approach
+4. Time/space or query-performance considerations
+5. Common interview mistakes
+
+---
+
+## Difficulty Progression
+
+For every major topic, give questions in this order:
+
+### Easy
+
+Basic understanding.
+
+### Medium
+
+Typical SDE-1 interview question.
+
+### Hard
+
+Requires combining multiple concepts.
+
+Do not give LeetCode-hard/database-administrator-level questions unless they are genuinely relevant to an SDE-1 backend interview.
+
+---
+
+## Important Interview Questions
+
+Make sure I can confidently answer these before finishing:
+
+1. What is a primary key?
+2. Primary key vs UNIQUE key?
+3. Primary key vs foreign key?
+4. What is normalization?
+5. Explain 1NF, 2NF and 3NF.
+6. What is denormalization and when would you use it?
+7. INNER JOIN vs LEFT JOIN?
+8. WHERE vs HAVING?
+9. JOIN vs subquery?
+10. EXISTS vs IN?
+11. What is an index?
+12. How does an index improve query performance?
+13. Why shouldn't we index every column?
+14. What is a composite index?
+15. Why does column order matter in a composite index?
+16. What is a transaction?
+17. Explain ACID.
+18. What are isolation levels?
+19. What is a dirty read?
+20. What is a phantom read?
+21. What is a deadlock?
+22. How can database deadlocks happen?
+23. Optimistic vs pessimistic locking?
+24. What is a database connection pool?
+25. What happens when the connection pool is exhausted?
+26. How would you optimize a slow SQL query?
+27. What is EXPLAIN?
+28. What is a full table scan?
+29. How do indexes affect INSERT/UPDATE/DELETE?
+30. How would you design a transaction table for a fintech application?
+
+---
+
+## Fintech-Relevant Questions
+
+Because the company is SmartCoin/Olyv, prioritize scenarios involving:
+
+* Loans
+* Customers
+* Loan applications
+* EMI payments
+* Transactions
+* Wallets
+* Accounts
+* Payment status
+* Failed transactions
+* Idempotency
+* Concurrent payments
+* Duplicate transactions
+* Transaction history
+
+Ask questions such as:
+
+> Two payment requests arrive simultaneously for the same loan. How would you prevent the EMI from being deducted twice?
+
+> A payment succeeds at the bank but your application crashes before updating the database. How would you handle this?
+
+> Two requests try to update the same account balance simultaneously. What can go wrong?
+
+> How would you design a transaction table?
+
+> How would you ensure a payment request is idempotent?
+
+> How would you find duplicate transactions?
+
+> How would you find the latest transaction for every customer?
+
+Connect these questions to SQL, transactions, indexes, locking, and concurrency.
+
+---
+
+## Important Rule
+
+Do not teach me everything about databases.
+
+My target is **SDE-1 backend interviews**.
+
+Prioritize topics based on:
+
+🔥 Very likely
+⭐ Important
+🟡 Good to know
+⚪ Skip for now
+
+If a topic is too advanced for SDE-1, explicitly tell me:
+
+> "You can skip this for now."
+
+At the end of each topic, give me a **short interview cheat sheet** containing:
+
+* 5–10 key concepts
+* Important differences
+* Common mistakes
+* 5 interview questions
+
+After I complete all topics, conduct a **mock SDE-1 Database interview**.
+
+The mock interview should include:
+
+* SQL coding questions
+* Conceptual questions
+* Query optimization
+* Database design
+* Transactions
+* Concurrency
+* Fintech scenarios
+
+Ask one question at a time and behave like a real interviewer.
+Do not reveal the answer until I attempt it.
+
+

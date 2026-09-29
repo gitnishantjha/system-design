@@ -1,0 +1,734 @@
+I am preparing for an **SDE-1 Software Engineer interview** based on the following job requirements:
+
+1. REST API concepts + SOLID principles
+2. MVC architecture
+3. Web application components, especially Security and Scalability
+4. MySQL — writing and debugging complex SQL queries
+
+Act as my **personal SDE-1 interview mentor and backend engineering teacher**.
+
+My goal is NOT just to memorize definitions. I want to understand **what, why, how, when to use it, common mistakes, and how it works in a real production application**.
+
+I have Java/Spring Boot experience, so whenever possible, explain concepts using **Java + Spring Boot examples**.
+
+## IMPORTANT TEACHING STYLE
+
+Teach me from beginner → intermediate → interview level.
+
+For every concept:
+
+1. Explain it in simple language first.
+2. Explain WHY it exists.
+3. Explain HOW it works internally where relevant.
+4. Give a real-world backend example.
+5. Show Java/Spring Boot implementation where applicable.
+6. Explain common mistakes and misconceptions.
+7. Give me interview questions.
+8. Ask me questions one at a time and wait for my answer.
+9. Correct my answer and explain what a strong SDE-1 candidate should say.
+10. Give me coding/debugging/design exercises.
+11. Clearly distinguish:
+
+* Must know for SDE-1
+* Good to know
+* Advanced / optional
+
+12. At the end of every major topic, give me a concise revision sheet.
+
+Do NOT overwhelm me by explaining everything at once.
+
+Teach one topic at a time and make sure I understand it before moving forward.
+
+---
+
+# PART 1 — REST APIs + HTTP
+
+Teach me the following in depth:
+
+### HTTP Fundamentals
+
+* Client-server architecture
+* HTTP request/response
+* HTTP methods:
+
+  * GET
+  * POST
+  * PUT
+  * PATCH
+  * DELETE
+* Idempotency
+* Safe vs unsafe methods
+* HTTP status codes:
+
+  * 2xx
+  * 3xx
+  * 4xx
+  * 5xx
+* Headers
+* Request body
+* Query parameters
+* Path parameters
+* Cookies
+* Content-Type
+* Accept
+* JSON
+
+### REST Principles
+
+Explain:
+
+* What REST actually means
+* REST constraints
+* Resources
+* Resource-oriented URLs
+* Statelessness
+* Representation
+* HTTP verbs
+* REST vs REST-like APIs
+
+Give examples such as:
+
+GET /users/123
+POST /users
+PUT /users/123
+PATCH /users/123
+DELETE /users/123
+
+Explain why one API design is better than another.
+
+### API Design
+
+Teach:
+
+* Pagination
+* Sorting
+* Filtering
+* Searching
+* Versioning
+* Error handling
+* Validation
+* Consistent API response structures
+* Exception handling
+* DTOs
+* Request/response models
+* API documentation
+* Backward compatibility
+
+Explain questions such as:
+
+"How would you design an API to fetch 10,000 users?"
+
+"How would you handle API errors?"
+
+"What status code would you return?"
+
+"What is the difference between PUT and PATCH?"
+
+"What happens when a client sends an invalid request?"
+
+### Spring Boot REST APIs
+
+Teach:
+
+* @RestController
+* @RequestMapping
+* @GetMapping
+* @PostMapping
+* @PutMapping
+* @PatchMapping
+* @DeleteMapping
+* @RequestBody
+* @PathVariable
+* @RequestParam
+* ResponseEntity
+* DTOs
+* Global exception handling
+* @ControllerAdvice
+* Validation
+
+Build a small CRUD REST API with me.
+
+---
+
+# PART 2 — SOLID PRINCIPLES
+
+Teach SOLID from an interview + practical coding perspective.
+
+For each principle explain:
+
+### S — Single Responsibility Principle
+
+Show:
+
+* Bad code
+* Why it violates SRP
+* Refactored code
+* Real Spring Boot example
+
+### O — Open/Closed Principle
+
+Explain with a practical example such as payment methods or notification systems.
+
+### L — Liskov Substitution Principle
+
+Use a simple example first and then a Java example.
+
+### I — Interface Segregation Principle
+
+Explain why large interfaces are problematic.
+
+### D — Dependency Inversion Principle
+
+Explain:
+
+* Dependency
+* Dependency injection
+* Abstraction
+* Interface
+* Spring dependency injection
+* Constructor injection
+
+Then explain the relationship between:
+
+SOLID → Clean Code → Low Coupling → High Cohesion → Maintainability
+
+### SOLID Interview Practice
+
+Ask questions such as:
+
+* Which SOLID principle does this code violate?
+* How would you refactor this class?
+* Is dependency injection part of SOLID?
+* Is every interface automatically good design?
+* Give a real example of Open/Closed Principle.
+
+Give me small code snippets and ask me to identify violations.
+
+---
+
+# PART 3 — MVC ARCHITECTURE
+
+Teach MVC from first principles.
+
+Explain:
+
+Client
+↓
+Controller
+↓
+Service
+↓
+Repository
+↓
+Database
+
+Explain exactly what each layer does.
+
+### MVC Concepts
+
+Teach:
+
+* Model
+* View
+* Controller
+* Separation of concerns
+* Controller vs Service
+* Service vs Repository
+* DTO vs Entity
+* Entity vs Model
+* Business logic placement
+* Dependency injection
+
+### Spring Boot Architecture
+
+Explain a typical Spring Boot application:
+
+Controller
+Service
+Repository
+Entity
+DTO
+Database
+
+Show a complete example.
+
+For example:
+
+POST /users
+
+Explain the entire request lifecycle:
+
+Client
+→ HTTP request
+→ Controller
+→ Validation
+→ Service
+→ Repository
+→ Database
+→ Repository
+→ Service
+→ Controller
+→ HTTP response
+
+Explain what happens internally at every step.
+
+### Interview Questions
+
+Ask me:
+
+* Why shouldn't business logic be placed in controllers?
+* Why do we need service classes?
+* Why shouldn't we expose JPA entities directly?
+* What is the repository pattern?
+* What is dependency injection?
+* What is loose coupling?
+* What happens when a request reaches a Spring Boot application?
+
+---
+
+# PART 4 — WEB APPLICATION COMPONENTS
+
+Teach me how a real production web application works.
+
+Start with a simple architecture:
+
+Client
+↓
+DNS
+↓
+Load Balancer
+↓
+Application Servers
+↓
+Cache
+↓
+Database
+
+Then gradually introduce:
+
+* DNS
+* HTTP/HTTPS
+* Reverse proxy
+* Load balancer
+* Application server
+* Web server
+* API gateway
+* Database
+* Cache
+* Message queue
+* CDN
+* Object storage
+
+For every component explain:
+
+1. What it is
+2. Why we need it
+3. Where it sits in the architecture
+4. What problem it solves
+5. Real-world example
+6. What happens if it fails
+
+---
+
+# PART 5 — WEB APPLICATION SECURITY
+
+Teach SDE-1 level web security.
+
+Must understand:
+
+### Authentication
+
+* Authentication vs Authorization
+* Sessions
+* Cookies
+* JWT
+* Access tokens
+* Refresh tokens
+* OAuth 2.0 basics
+
+### Common Attacks
+
+Explain:
+
+* SQL Injection
+* XSS
+* CSRF
+* CORS
+* Broken authentication
+* Password attacks
+* Session hijacking
+
+For each:
+
+* What is it?
+* Simple example
+* Why it happens
+* How to prevent it
+* How Spring Security helps
+
+### Spring Security
+
+Teach:
+
+* Security filter chain
+* Authentication
+* Authorization
+* Roles
+* Authorities
+* Password hashing
+* JWT authentication
+* @PreAuthorize
+* CORS
+* CSRF
+
+Build a simple secured Spring Boot REST API.
+
+---
+
+# PART 6 — SCALABILITY
+
+Teach scalability from an SDE-1 perspective.
+
+Start with:
+
+"What happens when my API receives 10 requests?"
+
+Then:
+
+"What happens when it receives 10,000 requests?"
+
+Then:
+
+"What happens when it receives 1 million requests?"
+
+Teach:
+
+### Vertical vs Horizontal Scaling
+
+### Stateless Applications
+
+Explain why statelessness is important.
+
+### Load Balancing
+
+Teach:
+
+* Why load balancers are needed
+* Round robin
+* Health checks
+* Multiple application instances
+
+### Caching
+
+Teach:
+
+* Why caching is needed
+* Cache-aside pattern
+* Redis basics
+* Cache invalidation
+* TTL
+* Cache hit/miss
+* Problems with stale data
+
+### Database Scalability
+
+Teach:
+
+* Indexing
+* Read replicas
+* Database connection pooling
+* Query optimization
+* Partitioning basics
+
+### Other Important Concepts
+
+Teach:
+
+* Rate limiting
+* Throttling
+* Connection pooling
+* Asynchronous processing
+* Message queues
+* Kafka basics
+* Horizontal scaling
+* Bottlenecks
+* Single point of failure
+
+Give me architecture scenarios such as:
+
+"Your API is slow. How would you debug it?"
+
+"Your API receives 100,000 requests per second. What would you change?"
+
+"Database CPU is 100%. What could be the reasons?"
+
+"One API instance is overloaded while others are idle. What could be wrong?"
+
+---
+
+# PART 7 — MYSQL + SQL
+
+This is an important interview area. Teach me SQL through actual problems rather than only theory.
+
+Start with:
+
+### SQL Fundamentals
+
+* SELECT
+* WHERE
+* ORDER BY
+* GROUP BY
+* HAVING
+* DISTINCT
+* LIMIT
+* INSERT
+* UPDATE
+* DELETE
+
+Then:
+
+### Joins
+
+Teach deeply:
+
+* INNER JOIN
+* LEFT JOIN
+* RIGHT JOIN
+* CROSS JOIN
+* SELF JOIN
+
+For every join, show:
+
+* Visual explanation
+* Example tables
+* Query
+* Output
+* When to use it
+
+### Aggregations
+
+Teach:
+
+* COUNT
+* SUM
+* AVG
+* MIN
+* MAX
+* GROUP BY
+* HAVING
+
+### Subqueries
+
+Teach:
+
+* Scalar subqueries
+* Correlated subqueries
+* EXISTS
+* NOT EXISTS
+* IN
+
+### CTEs
+
+Teach WITH queries and when they are useful.
+
+### Window Functions
+
+Teach:
+
+* ROW_NUMBER()
+* RANK()
+* DENSE_RANK()
+* LAG()
+* LEAD()
+* SUM() OVER()
+* PARTITION BY
+
+These should be taught with practical interview questions.
+
+---
+
+# PART 8 — COMPLEX SQL INTERVIEW QUESTIONS
+
+Create realistic tables such as:
+
+users
+orders
+products
+employees
+departments
+transactions
+
+Then ask me interview questions.
+
+Examples:
+
+1. Find the second-highest salary.
+2. Find the Nth-highest salary.
+3. Find duplicate records.
+4. Find employees who earn more than their manager.
+5. Find the highest-paid employee in every department.
+6. Find departments having more than 5 employees.
+7. Find users who have never placed an order.
+8. Find customers who placed orders in every month.
+9. Find the top 3 products by sales in each category.
+10. Find consecutive login days.
+11. Find the running total of transactions.
+12. Find duplicate emails.
+13. Find the latest order for every customer.
+14. Find customers whose spending is above average.
+15. Find users who purchased product A but never product B.
+
+For every problem:
+
+1. Let me attempt it first.
+2. Do not immediately give the solution.
+3. Give hints progressively.
+4. Evaluate my query.
+5. Explain correctness.
+6. Explain edge cases.
+7. Explain time/performance considerations.
+8. Show an optimized solution if applicable.
+
+---
+
+# PART 9 — SQL DEBUGGING
+
+Give me broken SQL queries and ask me to debug them.
+
+Include problems involving:
+
+* Wrong JOIN conditions
+* Duplicate rows
+* NULL handling
+* GROUP BY errors
+* HAVING vs WHERE
+* Incorrect subqueries
+* Incorrect aggregation
+* Missing indexes
+* Slow queries
+* N+1 query problems
+
+Teach me how to systematically debug a slow SQL query.
+
+Explain:
+
+EXPLAIN
+
+and how to understand:
+
+* Full table scan
+* Index scan
+* Index usage
+* Rows examined
+* Query cost
+* Join strategy
+
+---
+
+# PART 10 — CONNECT EVERYTHING
+
+After teaching the individual topics, give me realistic backend scenarios.
+
+Example:
+
+"Design a URL shortening service."
+
+Make me think about:
+
+REST API
+↓
+MVC
+↓
+SOLID
+↓
+Authentication
+↓
+Database
+↓
+SQL
+↓
+Caching
+↓
+Scalability
+↓
+Security
+
+Another scenario:
+
+"Design a simple e-commerce backend."
+
+Ask me to design:
+
+* APIs
+* Database tables
+* SQL queries
+* MVC layers
+* Authentication
+* Authorization
+* Caching
+* Scaling strategy
+* Error handling
+
+Do NOT expect an HLD-level answer initially. Keep it appropriate for SDE-1.
+
+---
+
+# INTERVIEW MODE
+
+After I finish learning, conduct a mock SDE-1 interview.
+
+Divide it into:
+
+Round 1 — REST + HTTP
+Round 2 — SOLID + OOP
+Round 3 — MVC + Spring Boot
+Round 4 — Security
+Round 5 — Scalability
+Round 6 — SQL
+Round 7 — Debugging
+Round 8 — Backend design
+
+Ask one question at a time.
+
+Do not reveal the answer unless I attempt it.
+
+After every answer, rate me:
+
+Understanding: /10
+Interview Answer: /10
+Technical Accuracy: /10
+
+Then explain how I could improve.
+
+---
+
+# PRIORITY
+
+Mark topics using:
+
+🔥 MUST KNOW
+⭐ SHOULD KNOW
+💡 GOOD TO KNOW
+🚀 ADVANCED
+
+Since I am preparing specifically for an **SDE-1 interview**, prioritize practical interview knowledge over obscure theoretical details.
+
+At the end, create:
+
+1. A complete SDE-1 revision sheet
+2. Top 50 interview questions
+3. Top 30 SQL problems
+4. Top 20 REST/API questions
+5. Top 15 SOLID/OOP questions
+6. Top 15 Spring MVC questions
+7. Top 15 security questions
+8. Top 15 scalability questions
+9. Common interview traps
+10. A final 7-day revision plan
+
+IMPORTANT:
+Do not skip fundamentals.
+Do not assume I already know system design.
+Whenever you introduce a new concept, connect it to a real backend application.
+
+ EXPLAIN in this order: Part -2 , 3 ,6, 7 , 8 , 5, 4, 1
